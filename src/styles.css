@@ -1,4 +1,4 @@
-/* styles.css */
+/* Root Variables */
 :root {
   --primary: #2A2D7C;
   --secondary: #9ad2dcda;
@@ -9,6 +9,7 @@
   --incorrect: #FF6B6B;
 }
 
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -17,16 +18,14 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  /* background-color: var(--background); */
-  /* background: url('https://img.freepik.com/free-vector/nature-park-scene-background-with-rainbow-sky_1308-59739.jpg?t=st=1738325695~exp=1738329295~hmac=1641c2cb2879d96315b0a1afcc4e6bcb509d398841700151c09382dd954b2de7&w=1380'); */
-  background-size: cover;
-  background: linear-gradient(45deg, rgba(71, 98, 109, 0.971),rgba(185, 189, 190, 0.971), rgb(95, 62, 120));
+  background: linear-gradient(45deg, rgba(71, 98, 109, 0.971), rgba(185, 189, 190, 0.971), rgb(95, 62, 120));
   height: 100vh;
   width: 100vw;
   color: var(--text);
   line-height: 1.6;
 }
 
+/* App Container */
 .app {
   max-width: 800px;
   margin: 0 auto;
@@ -34,6 +33,7 @@ body {
   min-height: 100vh;
 }
 
+/* Headings */
 h1 {
   color: var(--primary);
   font-size: 2.5rem;
@@ -43,25 +43,21 @@ h1 {
   letter-spacing: -0.5px;
 }
 
+/* Gamification Card */
 .gamification {
-  /* background: white; */
   padding: 1.5rem;
-  /* border-radius: 16px; */
-  /* box-shadow: 0 8px 32px rgba(0,0,0,0.05); */
   margin-bottom: 2rem;
   position: relative;
-
-  /* From https://css.glass */
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.07);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(6px);
--webkit-backdrop-filter: blur(6px);
-border: 0.2px solid rgba(255, 255, 255, 0.54);
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 0.2px solid rgba(255, 255, 255, 0.54);
 }
 
-.gamification::after{
+/* Decorative Circle */
+.gamification::after {
   content: "";
   height: 20vw;
   width: 20vw;
@@ -69,16 +65,21 @@ border: 0.2px solid rgba(255, 255, 255, 0.54);
   z-index: -1;
   border-radius: 50%;
   position: absolute;
-  transform: translate(80%, 10%);
+  transform: translate(80%, 20%);
 }
 
-
-.gamification h3 {
-  color: var(--primary);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+/* Quiz Card */
+.quiz, .results {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 0.2px solid rgba(255, 255, 255, 0.54);
 }
 
+/* Progress Bar */
 .progress-bar {
   height: 12px;
   background: #ecedee;
@@ -93,23 +94,7 @@ border: 0.2px solid rgba(255, 255, 255, 0.54);
   transition: width 0.3s ease;
 }
 
-.quiz {
-  /* background: white; */
-  /* border-radius: 16px; */
-  padding: 2rem;
-  /* box-shadow: 0 8px 32px rgba(0,0,0,0.05); */
-
-  /* From https://css.glass */
-  /* From https://css.glass */
-background: rgba(255, 255, 255, 0.07);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(6px);
-border: 0.2px solid rgba(255, 255, 255, 0.54);
-}
-
-
+/* Question Section */
 .question {
   margin-bottom: 2rem;
 }
@@ -122,6 +107,7 @@ border: 0.2px solid rgba(255, 255, 255, 0.54);
   text-transform: capitalize;
 }
 
+/* Options */
 .options {
   display: grid;
   gap: 1rem;
@@ -142,29 +128,23 @@ border: 0.2px solid rgba(255, 255, 255, 0.54);
 .option-button:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-  box-shadow: 0 4px 12px rgba(42,45,124,0.1);
+  box-shadow: 0 4px 12px rgba(42, 45, 124, 0.1);
 }
 
 .option-button.correct {
   border-color: var(--correct);
-  background: rgba(46,213,115,0.1);
+  background: rgba(46, 213, 115, 0.1);
 }
 
 .option-button.incorrect {
   border-color: var(--incorrect);
-  background: rgba(255,107,107,0.1);
+  background: rgba(255, 107, 107, 0.1);
 }
 
+/* Results */
 .results {
   text-align: center;
   padding: 3rem;
-  background: rgba(255, 255, 255, 0.07);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(6px);
-border: 0.2px solid rgba(255, 255, 255, 0.54);
-
 }
 
 .results h2 {
@@ -179,6 +159,7 @@ border: 0.2px solid rgba(255, 255, 255, 0.54);
   color: var(--text);
 }
 
+/* Buttons */
 button {
   padding: 1rem 2rem;
   background: var(--primary);
@@ -194,58 +175,75 @@ button {
 button:hover {
   background: var(--secondary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255,71,87,0.2);
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.2);
   color: rgb(21, 20, 20);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .gamification::after {
+    height: 25vw;
+    width: 25vw;
+    transform: translate(60%, 15%);
+  }
 }
 
 @media (max-width: 768px) {
   .app {
     padding: 1.5rem 1rem;
   }
-  
+
   h1 {
     font-size: 2rem;
   }
-  
+
   .question h2 {
     font-size: 1.25rem;
   }
+
+  .gamification::after {
+    height: 30vw;
+    width: 30vw;
+    transform: translate(30%, 20%);
+  }
 }
 
+@media (max-width: 480px) {
+  .gamification::after {
+    height: 40vw;
+    width: 40vw;
+    transform: translate(10%, 25%);
+  }
+}
 
-
+/* Loading and Error States */
 .loading {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #666;
-  }
-  
-  .error {
-    text-align: center;
-    padding: 20px;
-    color: #dc3545;
-    background-color: #f8d7da;
-    border-radius: 8px;
-    margin: 20px;
-  }
-  
-  .error button {
-    margin-top: 15px;
-    padding: 8px 20px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .error button:hover {
-    background-color: #bb2d3b;
-  }
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #666;
+}
 
+.error {
+  text-align: center;
+  padding: 20px;
+  color: #dc3545;
+  background-color: #f8d7da;
+  border-radius: 8px;
+  margin: 20px;
+}
 
-  /* --------------------------------------------------------------------- */
+.error button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  
+.error button:hover {
+  background-color: #bb2d3b;
+}
