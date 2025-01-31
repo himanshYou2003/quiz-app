@@ -48,3 +48,4 @@ A modern web-based quiz application with gamification features, fetching questio
 4. **Run the development server**   
    ```bash
    http://localhost:5173/
+
