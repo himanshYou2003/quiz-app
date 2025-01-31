@@ -5,7 +5,7 @@ const Question = ({ question, handleAnswer, selectedOption, handleNext, question
 
   return (
     <div className="question">
-      <h2> <span>Q{questionNumber} : </span> {question.description}</h2>
+      <h2>Q{questionNumber} : {question.description}</h2>
       <div className="options">
         {question.options.map((option) => (
           <button

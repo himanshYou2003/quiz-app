@@ -19,8 +19,8 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(45deg, rgba(71, 98, 109, 0.971), rgba(185, 189, 190, 0.971), rgb(95, 62, 120));
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   color: var(--text);
   line-height: 1.6;
 }
@@ -31,6 +31,7 @@ body {
   margin: 0 auto;
   padding: 2rem 1.5rem;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Headings */
@@ -107,12 +108,6 @@ h1 {
   text-transform: capitalize;
 }
 
-.question h2 span{
-  background-color: #2485b28e;
-  border-radius: 5px;
-  margin: 5px;
-  padding: 5px;
-}
 
 /* Options */
 .options {
@@ -196,6 +191,10 @@ button:hover {
 }
 
 @media (max-width: 768px) {
+  body {
+    min-height: 100vh; /* Replace height with min-height */
+    width: 100vw;
+  }
   .app {
     padding: 1.5rem 1rem;
   }
@@ -216,6 +215,10 @@ button:hover {
 }
 
 @media (max-width: 480px) {
+  body {
+    min-height: 100vh; /* Replace height with min-height */
+    width: 100vw;
+  }
   .gamification::after {
     height: 40vw;
     width: 40vw;
