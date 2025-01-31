@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect, useCallback, memo } from "react";
-import gsap from "gsap"; // Import GSAP for animations
+import gsap from "gsap";
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
 import Gamification from "./components/Gamification";
@@ -53,6 +52,11 @@ const App = () => {
     fetchQuizData();
   }, [fetchQuizData]);
 
+  const handleNext = useCallback(() => {
+    setCurrentQuestion(prev => prev + 1);
+    setSelectedOption(null);
+  }, []);
+
   // Optimized answer handling with GSAP vibration and warning sound
   const handleAnswer = useCallback((selectedOptionId) => {
     setSelectedOption(selectedOptionId);
@@ -70,14 +74,14 @@ const App = () => {
         { x: 5, repeat: 5, yoyo: true, duration: 0.1, ease: "power1.inOut" }
       );
 
-      const audio = new Audio("/wrong.mp3"); // Ensure `wrong.mp3` is in the `public` folder
+      const audio = new Audio("/wrong.mp3"); 
       audio.play();
     }
 
-    setTimeout(() => {
-      setCurrentQuestion(prev => prev + 1);
-      setSelectedOption(null);
-    }, 1000);
+    // setTimeout(() => {
+    //   setCurrentQuestion(prev => prev + 1);
+    //   setSelectedOption(null);
+    // }, 1000);
   }, [currentQuestion, quizData]);
 
   const restartQuiz = () => {
@@ -104,6 +108,8 @@ const App = () => {
             question={quizData[currentQuestion]}
             handleAnswer={handleAnswer}
             selectedOption={selectedOption}
+            handleNext={handleNext}
+            questionNumber={currentQuestion + 1}
           />
         </div>
       ) : (
