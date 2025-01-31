@@ -1,6 +1,6 @@
 # Genetics and Evolution Quiz App
 
-![Quiz App Screenshot](./public/screenshot.png) <!-- Add actual screenshot path -->
+![Quiz App Screenshot](./public/Screenshot.png)
 
 A modern web-based quiz application with gamification features, fetching questions from an external API. Built with React, Vite, and GSAP animations.
 
@@ -34,5 +34,17 @@ A modern web-based quiz application with gamification features, fetching questio
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/quiz-app.git
+   git clone https://github.com/himanshYou2003/quiz-app
    cd quiz-app
+
+2. **Install dependencies**   
+   ```bash
+   npm install
+
+3. **Run the development server**   
+   ```bash
+   npm run dev
+
+4. **Run the development server**   
+   ```bash
+   http://localhost:5173/
