@@ -1,0 +1,251 @@
+/* styles.css */
+:root {
+  --primary: #2A2D7C;
+  --secondary: #9ad2dcda;
+  --accent: #1763b9;
+  --background: #6988a8ec;
+  --text: #2D3436;
+  --correct: #2ED573;
+  --incorrect: #FF6B6B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  /* background-color: var(--background); */
+  /* background: url('https://img.freepik.com/free-vector/nature-park-scene-background-with-rainbow-sky_1308-59739.jpg?t=st=1738325695~exp=1738329295~hmac=1641c2cb2879d96315b0a1afcc4e6bcb509d398841700151c09382dd954b2de7&w=1380'); */
+  background-size: cover;
+  background: linear-gradient(45deg, rgba(71, 98, 109, 0.971),rgba(185, 189, 190, 0.971), rgb(95, 62, 120));
+  height: 100vh;
+  width: 100vw;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  min-height: 100vh;
+}
+
+h1 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.gamification {
+  /* background: white; */
+  padding: 1.5rem;
+  /* border-radius: 16px; */
+  /* box-shadow: 0 8px 32px rgba(0,0,0,0.05); */
+  margin-bottom: 2rem;
+  position: relative;
+
+  /* From https://css.glass */
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+border: 0.2px solid rgba(255, 255, 255, 0.54);
+}
+
+.gamification::after{
+  content: "";
+  height: 20vw;
+  width: 20vw;
+  background-color: #bb2d3bb5;
+  z-index: -1;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(80%, 10%);
+}
+
+
+.gamification h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #ecedee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+.quiz {
+  /* background: white; */
+  /* border-radius: 16px; */
+  padding: 2rem;
+  /* box-shadow: 0 8px 32px rgba(0,0,0,0.05); */
+
+  /* From https://css.glass */
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(6px);
+border: 0.2px solid rgba(255, 255, 255, 0.54);
+}
+
+
+.question {
+  margin-bottom: 2rem;
+}
+
+.question h2 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.options {
+  display: grid;
+  gap: 1rem;
+}
+
+.option-button {
+  padding: 1.25rem;
+  background: rgb(222, 230, 232);
+  border: 2px solid #EDF2F7;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.option-button:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(42,45,124,0.1);
+}
+
+.option-button.correct {
+  border-color: var(--correct);
+  background: rgba(46,213,115,0.1);
+}
+
+.option-button.incorrect {
+  border-color: var(--incorrect);
+  background: rgba(255,107,107,0.1);
+}
+
+.results {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.07);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(6px);
+border: 0.2px solid rgba(255, 255, 255, 0.54);
+
+}
+
+.results h2 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.results p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+button {
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: rgb(248, 244, 244);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,71,87,0.2);
+  color: rgb(21, 20, 20);
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 1.5rem 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .question h2 {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #666;
+  }
+  
+  .error {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-radius: 8px;
+    margin: 20px;
+  }
+  
+  .error button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .error button:hover {
+    background-color: #bb2d3b;
+  }
+
+
+  /* --------------------------------------------------------------------- */
+
+  
